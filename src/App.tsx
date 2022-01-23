@@ -8,7 +8,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 function App() {
 
     let [ratingValue, setRatingValue] = useState<RatingValueType>(4);
-    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
+    let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     let [on, setOn] = useState<boolean>(false)
 
 
@@ -20,6 +20,7 @@ function App() {
 
             <Rating value={ratingValue}
                     onClick={setRatingValue}/>
+            <hr/>
 
             <OnOff on={on}
                    onClick={setOn} />
@@ -27,9 +28,7 @@ function App() {
 
             <Accordion title={'Menu'}
                        collapsed={accordionCollapsed}
-                       onClick={setAccordionCollapsed} />
-
-            {/*<Accordion title={'Articles'}/>*/}
+                       onChange={setAccordionCollapsed} />
 
         </div>
     );

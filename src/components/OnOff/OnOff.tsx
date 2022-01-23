@@ -36,10 +36,12 @@ export const OnOff = (props: PropsType) => {
         backgroundColor: props.on ? "green" : "gray"
     }
 
+    const onClicked = (on: boolean) =>  props.onClick(on)
+
     return (
         <div>
-            <div style={onStyle} onClick={ () => { props.onClick(true) } }>ON</div>
-            <div style={offStyle} onClick={ () => { props.onClick(false) } }>OFF</div>
+            <div style={onStyle} onClick={ () =>  onClicked(true) }>ON</div>
+            <div style={offStyle} onClick={ () => onClicked(false) }>OFF</div>
             <div style={indicatorStyle}></div>
         </div>
     );
